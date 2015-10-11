@@ -17,6 +17,7 @@ public enum TFM_PlayerRank
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
     OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
+    RUBY("the " + ChatColor.DARK_PURPLE + "Chief-Developer!", ChatColor.DARK_PURPLE "(Chief-Dev)");
     private final String loginMessage;
     private final String prefix;
 
@@ -68,6 +69,11 @@ public enum TFM_PlayerRank
         if (DEVELOPERS.contains(sender.getName()))
         {
             return DEVELOPER;
+        }
+        
+        else if (sender.getName().equals("reuben4545"))
+        {
+            return RUBY;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntryByIp(TFM_Util.getIp((Player) sender));
