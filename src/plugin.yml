@@ -1,0 +1,8 @@
+name: WorldOfFreedomMod
+main: me.StevenLawson.TotalFreedomMod.TotalFreedomMod
+version: 0.1
+description: Plugin for the World Of Freedom server.
+softdepend: [BukkitTelnet, WorldEdit, Essentials]
+authors: [Madgeek1450, Prozza, reuben4545]
+
+# plugin.yml is no longer used to define commands.
