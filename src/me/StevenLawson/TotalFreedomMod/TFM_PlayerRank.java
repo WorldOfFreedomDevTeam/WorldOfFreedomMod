@@ -2,6 +2,7 @@ package me.StevenLawson.TotalFreedomMod;
 
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util; 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -15,9 +16,10 @@ public enum TFM_PlayerRank
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
+    OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "(Owner)"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
     RUBY("the " + ChatColor.DARK_PURPLE + "Chief-Developer!", ChatColor.DARK_PURPLE "(Chief-Dev)");
+    SERVERHOST("the " + ChatColor.LIGHT_BLUE + "Server Host!", ChatColor.GREEN "(Server-Host)")
     private final String loginMessage;
     private final String prefix;
 
@@ -74,6 +76,11 @@ public enum TFM_PlayerRank
         else if (sender.getName().equals("reuben4545"))
         {
             return RUBY;
+        }
+        
+        if (TFM_Util.ALONN.contains(sender.getName()))
+        {
+            return SERVERHOST;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntryByIp(TFM_Util.getIp((Player) sender));
